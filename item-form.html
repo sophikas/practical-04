@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Форма оформлення індивідуального замовлення букета в Bloom Flowers.">
+    <title>Оформлення замовлення букета — Bloom Flowers</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти до основного вмісту</a>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <p>Доставка Києвом — 150 ₴ • Щодня з 09:00 до 20:00</p>
+            <h1 class="logo">Bloom Flowers</h1>
+            <nav class="main-nav" aria-label="Основна навігація">
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="login.html">Вхід</a></li>
+                    <li><a href="register.html">Реєстрація</a></li>
+                    <li><a href="item-form.html" class="active">Замовити букет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="card">
+            <h2>Замовлення індивідуального букета</h2>
+            <p>Вкажіть ваші побажання, щоб наші флористи зібрали ідеальний букет.</p>
+
+            <form action="/api/v1/orders" method="post">
+                <div>
+                    <label for="flower-title">Коротка назва або привід замовлення</label>
+                    <input 
+                        id="flower-title" 
+                        name="orderTitle" 
+                        type="text" 
+                        minlength="3" 
+                        maxlength="80" 
+                        placeholder="Наприклад: Букет на День народження" 
+                        class="field-control"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="flower-category">Основні квіти в букеті</label>
+                    <select id="flower-category" name="flowerCategory" class="field-control" required>
+                        <option value="">-- Оберіть категорію --</option>
+                        <option value="mix">Збірний сезонний букет</option>
+                        <option value="roses">Троянди</option>
+                        <option value="tulips">Тюльпани</option>
+                        <option value="eustoma">Еустоми</option>
+                        <option value="box">Квіти в коробці</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="flower-quantity">Кількість квіток у композиції</label>
+                    <p id="quantity-hint">Від 3 до 101 штуки.</p>
+                    <input 
+                        id="flower-quantity" 
+                        name="quantity" 
+                        type="number" 
+                        min="3" 
+                        max="101" 
+                        step="2" 
+                        value="15" 
+                        aria-describedby="quantity-hint" 
+                        class="field-control"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="delivery-date">Бажана дата доставки</label>
+                    <input 
+                        id="delivery-date" 
+                        name="deliveryDate" 
+                        type="date" 
+                        class="field-control"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="flower-description">Побажання до оформлення та колірної гами</label>
+                    <textarea 
+                        id="flower-description" 
+                        name="description" 
+                        rows="5" 
+                        cols="40" 
+                        maxlength="500" 
+                        placeholder="Опишіть улюблені кольори, стрічки чи пакування..."
+                        class="field-control"
+                    ></textarea>
+                </div>
+
+                <fieldset>
+                    <legend>Спосіб доставки букета</legend>
+                    <label for="delivery-courier">
+                        <input 
+                            id="delivery-courier" 
+                            name="deliveryMethod" 
+                            type="radio" 
+                            value="courier" 
+                            checked
+                        >
+                        Кур'єром по Києву (150 ₴)
+                    </label>
+                    <br>
+                    <label for="delivery-pickup">
+                        <input 
+                            id="delivery-pickup" 
+                            name="deliveryMethod" 
+                            type="radio" 
+                            value="pickup"
+                        >
+                        Самовивіз із магазину (безкоштовно)
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Додаткові послуги</legend>
+                    <label for="addon-card">
+                        <input 
+                            id="addon-card" 
+                            name="addons" 
+                            type="checkbox" 
+                            value="greeting-card"
+                        >
+                        Додати безкоштовну підписану листівку
+                    </label>
+                    <br>
+                    <label for="addon-photo">
+                        <input 
+                            id="addon-photo" 
+                            name="addons" 
+                            type="checkbox" 
+                            value="photo-before-sending"
+                        >
+                        Надіслати фото букета перед відправкою
+                    </label>
+                </fieldset>
+
+                <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem;">
+                    <button type="submit" class="button">Оформити замовлення</button>
+                    <a href="index.html" style="color: var(--color-muted); text-decoration: none;">Скасувати</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <p>&copy; 2026 Bloom Flowers. Усі права захищено.</p>
+    </footer>
+</body>
+</html>

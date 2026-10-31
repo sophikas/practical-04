@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom Flowers — Головна</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Верхня шапка сайту з навігацією -->
+  <header class="site-header">
+    <div class="container header-container">
+      <h1 class="logo">Bloom Flowers</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Головна</a></li>
+          <li><a href="login.html">Вхід</a></li>
+          <li><a href="register.html">Реєстрація</a></li>
+          <li><a href="item-form.html">Замовити букет</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Основний вміст сторінки -->
+  <main class="container">
+    <section class="hero">
+      <h2>Ласкаво просимо до Bloom Flowers!</h2>
+      <p>Обирайте найсвіжіші букети та створюйте власні квіткові композиції для найважливіших моментів.</p>
+    </section>
+
+    <!-- Форма пошуку (з використанням GET за вимогами практичної) -->
+    <section class="search-section card">
+      <h3>Пошук букета</h3>
+      <form action="/search" method="GET" class="search-form">
+        <label for="search-input">Назва квітів або букета:</label>
+        <input type="search" id="search-input" name="query" placeholder="Наприклад, троянди..." class="field-control">
+        <button type="submit" class="button button--primary">Шукати</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Підвал сайту -->
+  <footer class="site-footer container">
+    <p>&copy; 2026 Bloom Flowers. Всі права захищено.</p>
+  </footer>
+
+</body>
+</html>

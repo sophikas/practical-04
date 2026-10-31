@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Реєстрація нового користувача в інтернет-магазині Bloom Flowers.">
+    <title>Реєстрація — Bloom Flowers</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Перейти до основного вмісту</a>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <p>Доставка Києвом — 150 ₴ • Щодня з 09:00 до 20:00</p>
+            <h1 class="logo">Bloom Flowers</h1>
+            <nav class="main-nav" aria-label="Основна навігація">
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="login.html">Вхід</a></li>
+                    <li><a href="register.html" class="active">Реєстрація</a></li>
+                    <li><a href="item-form.html">Замовити букет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="card">
+            <h2>Реєстрація нового користувача</h2>
+            <p>Створіть свій обліковий запис для швидкого оформлення замовлень.</p>
+
+            <form action="/api/v1/auth/register" method="post">
+                <div>
+                    <label for="reg-name">Повне ім'я</label>
+                    <input 
+                        id="reg-name" 
+                        name="fullName" 
+                        type="text" 
+                        autocomplete="name" 
+                        class="field-control"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="reg-email">Електронна пошта</label>
+                    <input 
+                        id="reg-email" 
+                        name="email" 
+                        type="email" 
+                        autocomplete="email" 
+                        class="field-control"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="reg-password">Пароль</label>
+                    <input 
+                        id="reg-password" 
+                        name="password" 
+                        type="password" 
+                        autocomplete="new-password" 
+                        class="field-control"
+                        required
+                    >
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <button type="submit" class="button">Зареєструватися</button>
+                </div>
+            </form>
+
+            <p style="margin-top: 1.5rem; color: var(--color-muted);">
+                Вже є акаунт? <a href="login.html" style="color: var(--color-primary);">Увійти</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <p>&copy; 2026 Bloom Flowers. Усі права захищено.</p>
+    </footer>
+</body>
+</html>
